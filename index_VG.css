@@ -27,7 +27,6 @@ body>div {
     display: flex;
     justify-content: center;
     align-items: center;
-
     margin-top: 15vh;
 
 }
@@ -560,6 +559,130 @@ footer {
         grid-column: 4;
         grid-row: 2;
     }
+
+
+}
+
+
+
+
+
+/*Phone Layout*/
+@media (max-width:500px) {
+
+    body>div {
+        margin: 0;
+    }
+
+    body>div>div {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .best {
+        grid-template-rows: repeat(4, auto);
+    }
+
+    .cover {
+        grid-column: 1/6;
+        grid-row: 1;
+    }
+
+    .cover>.show_not_hover {
+        border-radius: 20px 20px 0 0;
+    }
+
+    .song_list {
+        grid-column: 1/6;
+        grid-row: 2;
+        flex-direction: row;
+        padding-left: 0;
+    }
+
+    .song_list>div:nth-child(1) {
+        border-radius: 0 0 0 20px;
+    }
+
+    .song_list>div:nth-child(2) {
+        border-radius: 0 0 20px 0;
+    }
+
+
+    .album_data {
+        grid-row: 3;
+    }
+
+    .song_list>div>h2 {
+        font-size: 4vw;
+    }
+
+    .song_list>div>ul>li {
+        font-size: 3vw;
+    }
+
+    .album_data>div>h1 {
+        font-size: 7vw;
+    }
+
+    .album_data>div>h2 {
+        font-size: 4.5vw;
+    }
+
+    .album_data>div>p {
+        font-size: 3.5vw;
+        padding-bottom: 10px;
+    }
+
+    .album_data>div>ul {
+        font-size: 3.5vw;
+    }
+
+    .anecdotes>li {
+        font-size: 2.5vw;
+    }
+
+
+
+
+    .anecdotes {
+        grid-row: 4;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .two_wide.bottom_left_90 {
+        grid-column: 2/4;
+        grid-row: 1;
+    }
+
+    .empty {
+        grid-column: 1;
+        grid-row: 2;
+    }
+
+    .empty.tablet_empty {
+        display: none;
+    }
+
+    .empty.phone_empty {
+        display: none;
+    }
+
+
+
+    #axis_bold_as_love>.anecdotes>.two_wide.image.image_1.top_left_90 {
+        grid-column: 1/3;
+        grid-row: 2;
+    }
+
+    #axis_bold_as_love>.anecdotes>.bottom_right_90 {
+        grid-column: 3;
+        grid-row: 2;
+    }
+
+
 
 
 }
