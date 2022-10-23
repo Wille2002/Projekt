@@ -16,10 +16,11 @@
 body {
     margin: 0;
     color: white;
-    background-image: url("Music\ of\ the\ spheres.jpg");
+    background-image: url("Background.jpg");
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    font-family: "Barlow";
 }
 
 /*Stora containern*/
@@ -32,11 +33,12 @@ body>div {
 }
 
 body>div>div {
-    width: 90vw;
+    width: 85vw;
     height: auto;
     background-color: rgba(0, 0, 0, 0.294);
     border-radius: 15px;
     margin-bottom: 10vh;
+    padding: 20px;
 }
 
 
@@ -50,7 +52,7 @@ body>div>div>header {
 div>header>h1 {
     margin: 0;
     font-size: 60px;
-    padding: 20px;
+    padding-bottom: 20px;
 
 }
 
@@ -66,8 +68,7 @@ div>nav {
 }
 
 div>nav>div {
-    width: 20%;
-    font-family: "Barlow";
+    width: 100%;
     font-size: 2.5vw;
     padding: 1.5vw 1vw;
     background-color: rgba(255, 255, 255, 0.57);
@@ -87,7 +88,7 @@ nav>.marked {
 }
 
 nav>.marked:hover {
-    background-color: rgba(255, 255, 255, 0.457);
+    background-color: rgba(255, 255, 255, 0.57);
 }
 
 
@@ -101,23 +102,23 @@ nav>.marked:hover {
     height: auto;
     border: 1px solid white;
     border-radius: 20px;
-    padding: 20px;
+    padding: 15px;
 
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 10fr 4fr 5fr;
-    margin-bottom: 30px;
-    width: 80vw;
+    margin-bottom: 20px;
+    width: auto;
 
 }
-
-#are_you_experienced {}
 
 /*bild utan hover*/
 .cover {
     grid-column: 4 / 6;
     width: 100%;
     margin-bottom: 10px;
+
+    display: grid;
 }
 
 .cover>.show_not_hover {
@@ -126,12 +127,29 @@ nav>.marked:hover {
     object-fit: cover;
     object-position: center;
     border-radius: 20px 20px 0px 0px;
-}
 
+    grid-column: 1;
+    grid-row: 1;
+}
 
 /*bild med hover*/
 .show_hover {
-    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px 20px 0px 0px;
+    grid-column: 1;
+    grid-row: 1;
+
+    opacity: 0;
+    transition-duration: 1s;
+
+}
+
+.cover:hover .show_hover {
+    opacity: 1;
+    z-index: 1;
 }
 
 
@@ -198,12 +216,14 @@ nav>.marked:hover {
 
 .song_list>div>h2 {
     font-size: 1.6vw;
-    margin-left: 2vw;
+    margin-left: 15px;
+    margin-bottom: 0;
 }
 
 .song_list>div>ul {
     list-style-type: decimal;
     padding-left: 4vh;
+    margin-top: 0;
 }
 
 .song_list>div>ul>li {
@@ -230,7 +250,9 @@ nav>.marked:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+
     font-size: 1.2vw;
+    padding: 2vh;
 }
 
 
@@ -239,7 +261,6 @@ nav>.marked:hover {
     background-color: #c1c1c1;
     border-radius: 20px 0 20px 20px;
     color: #0d4a7d;
-    padding: 2vh;
 }
 
 .empty {
@@ -259,18 +280,14 @@ nav>.marked:hover {
     background-color: #c1c1c1;
     border-radius: 20px 20px 20px 0;
     color: #0d4a7d;
-    padding: 2vh;
 }
 
 .image.image_1.top_left_90 {
     grid-column: 5/6;
     background-image: url("Paul.jpg");
-    height: 100%;
-    width: 100%;
     background-size: cover;
     background-position: center;
     border-radius: 0 20px 20px 20px;
-    padding: 0;
     color: rgba(255, 255, 255, 0.787);
 
     display: flex;
@@ -283,7 +300,6 @@ nav>.marked:hover {
     background-color: #c1c1c1;
     border-radius: 20px 20px 0 20px;
     color: #0d4a7d;
-    padding: 2vh;
 }
 
 
@@ -300,36 +316,28 @@ nav>.marked:hover {
     grid-column: 1/3;
     background-color: #358411;
     color: #0e0c59;
-    padding: 2vh;
 }
 
 .top_left_90 {
     background-color: #358411;
     color: #0e0c59;
-    padding: 2vh;
     border-radius: 0 20px 20px 20px;
 }
 
 #axis_bold_as_love>.anecdotes>.two_wide.image.image_1.top_left_90 {
     background-image: url("Danton_supple.jpg");
     grid-column: 4/6;
-    padding: 0;
 }
 
 #axis_bold_as_love>.anecdotes>.bottom_right_90 {
     background-color: #358411;
     color: #0e0c59;
-    padding: 2vh;
 }
 
 
 #axis_bold_as_love>.song_list>div {
     background-color: #0e0c59;
     color: #358411;
-}
-
-footer {
-    margin: 20px;
 }
 
 
@@ -416,6 +424,10 @@ footer {
 
 @media (max-width:800px) {
 
+    body {
+        background-image: url("Background Tablet.jpg");
+    }
+
     .best {
         grid-template-rows: 1fr 1fr 1fr;
     }
@@ -432,6 +444,10 @@ footer {
 
     .cover>.show_not_hover {
         border-radius: 20px 0 0 20px;
+    }
+
+    .show_hover {
+        display: none;
     }
 
     .song_list {
@@ -476,6 +492,7 @@ footer {
 
     .album_data>div>p {
         font-size: 2.2vw;
+        padding-bottom: 10px;
     }
 
     .album_data>div>ul {
@@ -570,6 +587,10 @@ footer {
 /*Phone Layout*/
 @media (max-width:500px) {
 
+    body {
+        background-image: url("Music\ of\ the\ spheres.jpg");
+    }
+
     body>div {
         margin: 0;
     }
@@ -632,7 +653,6 @@ footer {
 
     .album_data>div>p {
         font-size: 3.5vw;
-        padding-bottom: 10px;
     }
 
     .album_data>div>ul {
